@@ -5,7 +5,8 @@ import io
 from contextlib import contextmanager
 
 import pya2l.a2l_listener
-import pya2l.parserlib
+with atheris.instrument_imports():
+    import pya2l.parserlib
 
 
 # Disable stdout
@@ -21,7 +22,6 @@ def nostdout():
 
 
 fuzz_iter = 0
-@atheris.instrument_func
 def TestOneInput(data):
     global fuzz_iter
     fuzz_iter += 1
@@ -35,6 +35,7 @@ def TestOneInput(data):
         # This is a valid exception, but it's too pervasive to raise all the time
         if fuzz_iter > 1000:
             raise e
+        pass
     return 0
 
 
