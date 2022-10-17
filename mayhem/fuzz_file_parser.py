@@ -4,8 +4,9 @@ import sys
 import io
 from contextlib import contextmanager
 
-import pya2l.a2l_listener
-with atheris.instrument_imports():
+
+with atheris.instrument_imports(include=['antlr4']):
+    import pya2l.a2l_listener
     import pya2l.parserlib
 
 
@@ -22,6 +23,8 @@ def nostdout():
 
 
 fuzz_iter = 0
+
+
 def TestOneInput(data):
     global fuzz_iter
     fuzz_iter += 1
