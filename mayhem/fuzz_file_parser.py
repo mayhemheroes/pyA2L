@@ -4,9 +4,8 @@ import sys
 import io
 from contextlib import contextmanager
 
-with atheris.instrument_imports():
-    import pya2l.a2l_listener
-    import pya2l.parserlib
+import pya2l.a2l_listener
+import pya2l.parserlib
 
 
 # Disable stdout
