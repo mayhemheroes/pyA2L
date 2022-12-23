@@ -1,0 +1,8 @@
+project: pyA2L
+target: parser-fuzz
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /fuzz_file_parser.py
+    libfuzzer: true
